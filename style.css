@@ -10,6 +10,26 @@
 *::before,
 *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+/* Глобально: ничего не должно вылезать по горизонтали */
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+section, .hero, .side-menu, .cta__inner, .next-quest, .price-block {
+  overflow-x: clip;
+}
+
+/* Декоративные элементы не должны растягивать страницу */
+.hero__glow,
+.cta__glow,
+.next-quest::before,
+.price-block::before,
+.audience-card::before,
+.about-split__visual::after,
+.quest-card__media::after {
+  max-width: 100%;
+}
 /* ---------- Переменные: тёмная тема (по умолчанию) ---------- */
 :root {
   --bg: #08090d;
@@ -244,8 +264,10 @@ h1, h2, h3, h4 {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 32px;
+  gap: 16px;
   width: 100%;
+  min-width: 0;
+  max-width: 100%;
 }
 
 .brand {
@@ -253,6 +275,9 @@ h1, h2, h3, h4 {
   flex-direction: column;
   gap: 4px;
   line-height: 1;
+  min-width: 0;
+  flex-shrink: 1;
+  overflow: hidden;
 }
 
 .brand__name {
@@ -260,17 +285,20 @@ h1, h2, h3, h4 {
   font-size: 22px;
   font-weight: 800;
   letter-spacing: 0.02em;
+  white-space: nowrap;
 }
+
 
 .brand__accent { color: var(--accent); }
 
 .brand__sub {
   font-family: 'Space Grotesk', sans-serif;
-  font-size: var(--fs-tiny);
+  font-size: 10px;
   letter-spacing: 0.28em;
   text-transform: uppercase;
   color: var(--text-muted);
   font-weight: 500;
+  white-space: nowrap;
 }
 
 .nav {
@@ -305,7 +333,9 @@ h1, h2, h3, h4 {
 .header__actions {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
+  flex-shrink: 0;
+  max-width: 100%;
 }
 
 .theme-toggle {
@@ -766,6 +796,7 @@ font-size: var(--fs-small);
   padding: calc(var(--header-h) + 80px) 0 100px;
   position: relative;
   overflow: hidden;
+  max-width: 100%;
 }
 
 .hero::before {
@@ -780,7 +811,6 @@ font-size: var(--fs-small);
   pointer-events: none;
   z-index: 0;
 }
-
 .hero__inner {
   position: relative;
   z-index: 2;
@@ -788,14 +818,24 @@ font-size: var(--fs-small);
   grid-template-columns: 1.15fr 1fr;
   gap: 80px;
   align-items: center;
+  max-width: 100%;
+  min-width: 0;
+}
+
+.hero__content {
+  min-width: 0;
+  max-width: 100%;
 }
 
 .hero__title {
-  font-size: clamp(48px, 8vw, 108px);
-  line-height: 0.92;
+  font-size: clamp(32px, 9vw, 108px);
+  line-height: 0.95;
   letter-spacing: -0.04em;
   margin-bottom: 32px;
   text-transform: uppercase;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  max-width: 100%;
 }
 
 .hero__subtitle {
@@ -824,15 +864,9 @@ font-size: var(--fs-small);
   position: relative;
   transition: transform 0.6s var(--ease-out);
   will-change: transform;
-}
-
-.hero__glow {
-  position: absolute;
-  inset: -20%;
-  background: radial-gradient(circle, var(--accent-glow), transparent 60%);
-  filter: blur(60px);
-  opacity: 0.5;
-  z-index: 0;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
 }
 
 .hero__image {
@@ -840,6 +874,8 @@ font-size: var(--fs-small);
   z-index: 1;
   border-radius: var(--radius-lg);
   overflow: hidden;
+  width: 100%;
+  max-width: 100%;
   aspect-ratio: 1 / 1;
   border: 1px solid var(--border-strong);
   box-shadow: 0 40px 100px rgba(0, 0, 0, 0.5);
@@ -848,7 +884,9 @@ font-size: var(--fs-small);
 .hero__image img {
   width: 100%;
   height: 100%;
+  max-width: 100%;
   object-fit: cover;
+  display: block;
 }
 
 .hero__image::after {
@@ -1396,20 +1434,53 @@ font-size: var(--fs-small);
 }
 
 @media (max-width: 560px) {
-  .hero__title { letter-spacing: -0.02em; }
-  .hero__actions { flex-direction: column; }
-  .hero__actions .btn { width: 100%; }
-  .hero__stats { gap: 24px; }
+  .hero {
+    padding: calc(var(--header-h) + 40px) 0 60px;
+  }
 
-  .header__actions .btn--small { padding: 8px 12px; font-size: 12px; }
-  .side-menu__panel { padding: 24px 20px 20px; }
-  .side-menu__list > li > a,
-  .side-menu__link { font-size: 18px; }
+  .hero__title {
+    font-size: clamp(30px, 10vw, 44px);
+    letter-spacing: -0.02em;
+    line-height: 1;
+  }
 
-  .next-quest__meta { gap: 24px; }
-  .next-quest__actions { flex-direction: column; }
+  .hero__subtitle {
+    font-size: var(--fs-base);
+    margin-bottom: 32px;
+  }
 
-  .cta__title { font-size: clamp(28px, 8vw, 40px); }
+  .hero__actions {
+    flex-direction: column;
+    margin-bottom: 40px;
+  }
+
+  .hero__actions .btn {
+    width: 100%;
+  }
+
+  .hero__stats {
+    gap: 20px;
+  }
+
+  .hero__visual {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .hero__image {
+    aspect-ratio: 4 / 5;
+    max-width: 100%;
+  }
+
+  .hero__badge {
+    padding: 14px 20px;
+    bottom: -12px;
+    left: -10px;
+  }
+
+  .hero__badge-num {
+    font-size: 26px;
+  }
 }
 /* ============================================
    Пакет 3: страницы, заголовки страниц, карточка «скоро»
@@ -1983,4 +2054,60 @@ font-size: var(--fs-small);
   .audience-card { padding: 24px 22px; }
 
   .step-card__num { font-size: 32px; }
+}
+/* ============================================
+   ФИНАЛЬНЫЙ ФИКС — бургер и шапка на мобильных
+   Работает поверх всех предыдущих медиазапросов
+   ============================================ */
+
+@media (max-width: 560px) {
+  .container {
+    padding: 0 16px;
+  }
+
+  .header {
+    overflow: hidden;
+  }
+
+  .header__inner {
+    min-width: 0;
+    max-width: 100%;
+    gap: 8px;
+  }
+
+  .brand {
+    min-width: 0;
+    flex-shrink: 1;
+  }
+
+  .brand__name { font-size: 17px; }
+  .brand__sub { font-size: 9px; letter-spacing: 0.18em; }
+
+  .header__actions {
+    flex-shrink: 0;
+    gap: 6px;
+  }
+
+  .theme-toggle {
+    width: 36px;
+    height: 36px;
+    font-size: 14px;
+  }
+
+  .header__actions .btn--small {
+    padding: 7px 10px;
+    font-size: 11px;
+  }
+
+  .burger {
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+  }
+}
+
+@media (max-width: 420px) {
+  .header__actions .btn--pulse {
+    display: none;
+  }
 }
