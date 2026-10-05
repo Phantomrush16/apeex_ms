@@ -2111,3 +2111,26 @@ font-size: var(--fs-small);
     display: none;
   }
 }
+@media (max-width: 700px) {
+  .quest-cta .cta__title {
+    font-size: clamp(24px, 7vw, 40px);
+    line-height: 1.1;
+  }
+}
+
+@media (max-width: 480px) {
+  .quest-cta .cta__title {
+    font-size: clamp(20px, 8vw, 30px);
+  }
+}
+@media (max-width: 700px) {
+  .cta__inner {
+    padding: 56px 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cta__inner {
+    padding: 44px 20px;
+  }
+}
