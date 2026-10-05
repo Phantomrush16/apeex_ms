@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Что такое автоквест? Ночная игра на колёсах: загадки, точки, задания. Узнай, как это работает и кому подходит.">
+  <meta name="theme-color" content="#08090d">
+  <!-- Open Graph (для Telegram, ВК, WhatsApp) -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="APEEX MS">
+<meta property="og:title" content="APEEX MS — Автоквесты Орск">
+<meta property="og:description" content="Ночные автоквесты в Орске. Собирай команду и разгадай свой город.">
+<meta property="og:image" content="preview.jpg">
+<meta property="og:url" content="https://phantomrush16.github.io/apeexms/">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="APEEX MS — Автоквесты Орск">
+<meta name="twitter:description" content="Ночные автоквесты в Орске. Собирай команду и разгадай свой город.">
+<meta name="twitter:image" content="preview.jpg">
+  <title>Что такое автоквест — APEEX MS</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="preloader" id="preloader">
+    <span class="preloader__logo">APEEX MS</span>
+  </div>
+
+  <!-- ШАПКА -->
+  <header class="header">
+    <div class="container header__inner">
+      <a href="index.html" class="brand">
+        <span class="brand__name">APEEX<span class="brand__accent">MS</span></span>
+        <span class="brand__sub">АВТОКВЕСТЫ ОРСК</span>
+      </a>
+
+      <div class="header__actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Переключить тему">
+          <span class="theme-toggle__icon">☾</span>
+        </button>
+
+        <a href="https://t.me/onli_apx" target="_blank" rel="noopener" class="btn btn--primary btn--small btn--pulse">
+          Новый квест
+        </a>
+
+        <button class="burger" id="burger" aria-label="Открыть меню" aria-expanded="false">
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- БОКОВОЕ МЕНЮ -->
+  <aside class="side-menu" id="sideMenu" aria-hidden="true">
+    <div class="side-menu__backdrop" data-close-menu></div>
+    <nav class="side-menu__panel" role="navigation">
+      <div class="side-menu__head">
+        <span class="brand__name">APEEX<span class="brand__accent">MS</span></span>
+        <button class="side-menu__close" data-close-menu aria-label="Закрыть меню">✕</button>
+      </div>
+
+      <ul class="side-menu__list">
+        <li><a href="index.html">Главная</a></li>
+
+        <li class="side-menu__item side-menu__item--has-sub" id="questsItem">
+          <div class="side-menu__row">
+            <a href="quests.html" class="side-menu__link">Квесты</a>
+            <button class="side-menu__arrow" id="questsArrow" aria-label="Показать список квестов" aria-expanded="false">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+          </div>
+          <ul class="side-menu__sub" id="questsSub">
+            <li><a href="quest-1.html">ЖИЗНЬ ПО ВЫЗОВУ</a></li>
+            <li><a href="quest-2.html">ТЁМНАЯ ТРАССА</a></li>
+            <li><a href="quest-3.html">ПЕРВЫЙ ЗАЕЗД</a></li>
+          </ul>
+        </li>
+
+        <li><a href="about.html">Что такое автоквест</a></li>
+        <li><a href="index.html#how">Как это работает</a></li>
+        <li><a href="index.html#faq">Вопросы</a></li>
+        <li><a href="index.html#contact">Контакты</a></li>
+      </ul>
+
+      <div class="side-menu__footer">
+        <a href="https://t.me/onli_apx" target="_blank" rel="noopener" class="btn btn--primary side-menu__cta">
+          Написать в Telegram
+        </a>
+        <span class="side-menu__note">@onli_apx</span>
+      </div>
+    </nav>
+  </aside>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow reveal">Гид для новичков</span>
+      <h1 class="page-hero__title reveal reveal--delay-1">
+        ЧТО ТАКОЕ<br><span class="gradient-text">АВТОКВЕСТ</span>
+      </h1>
+      <p class="page-hero__text reveal reveal--delay-2">
+        Это ночная игра на колёсах. Ты собираешь команду, садишься
+        за руль и получаешь задания. Разгадываешь, едешь к точке,
+        выполняешь. Город становится полем игры.
+      </p>
+    </div>
+  </section>
+
+  <!-- БЛОК «ЭТО НЕ ГОНКА» -->
+  <section class="section section--tight">
+    <div class="container">
+      <div class="about-split reveal">
+        <div class="about-split__content">
+          <span class="eyebrow">Важно понимать</span>
+          <h2 class="section-title">Это не гонка</h2>
+          <p class="section-subtitle">
+            Автоквест — это не соревнование «кто быстрее». Здесь побеждает
+            не самый быстрый водитель, а самая сообразительная команда.
+          </p>
+          <p class="about-split__text">
+            Ты ездишь по городу, ищешь точки, разгадываешь шифры и выполняешь
+            задания. Скорость важна, но она — не главное. Главное — правильно
+            понять загадку и найти верное решение.
+          </p>
+          <p class="about-split__text">
+            Можно ехать спокойно, без нарушений и без риска. Никто не заставит
+            тебя гнать. Зато азарта — хоть отбавляй.
+          </p>
+        </div>
+        <div class="about-split__visual">
+            <img src="images/about-road.webp" alt="Это не гонка" loading="lazy" width="1024" height="1280 ">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- КАК ПРОХОДИТ ИГРА -->
+  <section class="section" id="how">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Пошагово</span>
+        <h2 class="section-title">Как проходит игра</h2>
+      </div>
+
+      <div class="steps-grid">
+
+        <div class="step-card reveal">
+          <span class="step-card__num">01</span>
+          <h3 class="step-card__title">Регистрация</h3>
+          <p class="step-card__text">
+            Собираешь команду (2–6 человек) и пишешь нам в Telegram.
+            Мы добавляем вас в игру.
+          </p>
+        </div>
+
+        <div class="step-card reveal reveal--delay-1">
+          <span class="step-card__num">02</span>
+          <h3 class="step-card__title">Сбор и брифинг</h3>
+          <p class="step-card__text">
+            Приезжаете на точку сбора. Мы объясняем правила, отвечаем
+            на вопросы, раздаём материалы.
+          </p>
+        </div>
+
+        <div class="step-card reveal reveal--delay-2">
+          <span class="step-card__num">03</span>
+          <h3 class="step-card__title">Старт</h3>
+          <p class="step-card__text">
+            Ровно в полночь открывается движок. Вы получаете первое
+            задание — и погнали.
+          </p>
+        </div>
+
+        <div class="step-card reveal reveal--delay-3">
+          <span class="step-card__num">04</span>
+          <h3 class="step-card__title">Игра</h3>
+          <p class="step-card__text">
+            Разгадываете загадки, едете к точкам, выполняете задания.
+            Каждое — приближает вас к финишу.
+          </p>
+        </div>
+
+        <div class="step-card reveal reveal--delay-4">
+          <span class="step-card__num">05</span>
+          <h3 class="step-card__title">Финиш</h3>
+          <p class="step-card__text">
+            Приезжаете на финишную точку. Здесь вас ждут организаторы,
+            чай и разбор игры.
+          </p>
+        </div>
+
+        <div class="step-card reveal reveal--delay-4">
+          <span class="step-card__num">06</span>
+          <h3 class="step-card__title">Результаты</h3>
+          <p class="step-card__text">
+            Через день мы объявляем итоги в Telegram. Лучшие команды
+            получают призы от партнёров.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ЧТО ЗА ЗАДАНИЯ -->
+  <section class="section section--tight">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Что внутри</span>
+        <h2 class="section-title">Какие бывают задания</h2>
+        <p class="section-subtitle">
+          На каждом квесте — свой набор. Но типы обычно такие:
+        </p>
+      </div>
+
+      <div class="tasks-detail">
+
+        <div class="task-detail reveal">
+          <div class="task-detail__icon">🔍</div>
+          <h3 class="task-detail__title">Поиск кодов</h3>
+          <p class="task-detail__text">
+            Маленькие надписи в неожиданных местах. Нужно быть внимательным
+            и знать, куда смотреть.
+          </p>
+        </div>
+
+        <div class="task-detail reveal reveal--delay-1">
+          <div class="task-detail__icon">🗺️</div>
+          <h3 class="task-detail__title">Траектория</h3>
+          <p class="task-detail__text">
+            Задание на ориентирование. По описанию нужно понять,
+            куда ехать, и найти нужную точку.
+          </p>
+        </div>
+
+        <div class="task-detail reveal reveal--delay-2">
+          <div class="task-detail__icon">🕵️</div>
+          <h3 class="task-detail__title">Агентское задание</h3>
+          <p class="task-detail__text">
+            Ваша задача — вычислить агента и выполнить его задание.
+            Кто-то из игроков играет против вас.
+          </p>
+        </div>
+
+        <div class="task-detail reveal reveal--delay-3">
+          <div class="task-detail__icon">📍</div>
+          <h3 class="task-detail__title">Живой чек</h3>
+          <p class="task-detail__text">
+            Загаданные места, где вас ждут организаторы для прохождения
+            активного и весёлого тематического задания.
+          </p>
+        </div>
+
+        <div class="task-detail reveal reveal--delay-4">
+          <div class="task-detail__icon">🧩</div>
+          <h3 class="task-detail__title">Логические загадки</h3>
+          <p class="task-detail__text">
+            Шифры, ассоциации, смекалка. Над некоторыми заданиями
+            придётся поломать голову всей командой.
+          </p>
+        </div>
+
+        <div class="task-detail reveal reveal--delay-4">
+          <div class="task-detail__icon">📸</div>
+          <h3 class="task-detail__title">Фото-задания</h3>
+          <p class="task-detail__text">
+            Креативные задания, где нужно снять что-то по условию.
+            Оценивается оригинальность.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- КОМУ ПОДХОДИТ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Кому подходит</span>
+        <h2 class="section-title">Игра для всех</h2>
+      </div>
+
+      <div class="audience-grid">
+
+        <div class="audience-card reveal">
+          <span class="audience-card__icon">🎓</span>
+          <h3 class="audience-card__title">Новичкам</h3>
+          <p class="audience-card__text">
+            Никогда не играл — не страшно. У нас есть лёгкий формат
+            «Первый заезд». Правила простые, все помогают.
+          </p>
+        </div>
+
+        <div class="audience-card reveal reveal--delay-1">
+          <span class="audience-card__icon">🔥</span>
+          <h3 class="audience-card__title">Опытным</h3>
+          <p class="audience-card__text">
+            Играл раньше — у нас есть «Тёмная трасса»: сложные шифры,
+            агентские задания, ночные загадки.
+          </p>
+        </div>
+
+        <div class="audience-card reveal reveal--delay-2">
+          <span class="audience-card__icon">🎉</span>
+          <h3 class="audience-card__title">Компаниям</h3>
+          <p class="audience-card__text">
+            Отличный вариант для дня рождения, корпоратива
+            или просто ночного приключения с друзьями.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ ПО АВТОКВЕСТАМ -->
+  <section class="section section--tight">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Вопросы</span>
+        <h2 class="section-title">Частые вопросы</h2>
+      </div>
+
+      <div class="faq__list">
+        <details class="faq-item reveal">
+          <summary>Нужно ли быть опытным водителем?</summary>
+          <p>Нет. Ездите спокойно, соблюдая ПДД. Автоквест — это не гонка, а игра на сообразительность. Никакого лихачества не требуется.</p>
+        </details>
+        <details class="faq-item reveal">
+          <summary>Сколько человек должно быть в команде?</summary>
+          <p>От 2 до 6 человек в одной машине. Одна машина = одна команда. Если у вас больше людей — нужны две машины.</p>
+        </details>
+        <details class="faq-item reveal">
+          <summary>Что если я вообще ничего не понимаю в шифрах?</summary>
+          <p>Это нормально. На старте мы всё объясняем, а на игре задания разной сложности — есть простые, есть посложнее. Плюс всегда можно спросить у организаторов.</p>
+        </details>
+        <details class="faq-item reveal">
+          <summary>Сколько длится игра?</summary>
+          <p>Обычно 4–5 часов. Старт около полуночи, финиш — к 5 утра. Есть квесты и покороче — около 3 часов.</p>
+        </details>
+        <details class="faq-item reveal">
+          <summary>Можно ли с детьми?</summary>
+          <p>Зависит от квеста. «Первый заезд» — можно с подростками. «Тёмная трасса» — 18+, там ночные локации и сложные задания.</p>
+        </details>
+        <details class="faq-item reveal">
+          <summary>Что если машина сломается по дороге?</summary>
+          <p>Напишите организаторам — мы поможем и подскажем, что делать. Игру можно продолжить или перенести участие на другой раз.</p>
+        </details>
+        <details class="faq-item reveal">
+          <summary>Как оплатить участие?</summary>
+          <p>После записи в Telegram мы пришлём реквизиты. Оплата — до старта игры. Работаем с картой и наличными.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section cta" id="contact">
+    <div class="container">
+      <div class="cta__inner reveal">
+        <div class="cta__glow"></div>
+        <span class="eyebrow">Попробуй</span>
+        <h2 class="cta__title">
+          Начни с<br><span class="gradient-text">первого заезда</span>
+        </h2>
+        <p class="cta__text">
+          Если ты новичок — мы рекомендуем начать с лёгкого формата.
+          Пиши в Telegram, поможем выбрать.
+        </p>
+        <div class="cta__actions">
+          <a href="quest-3.html" class="btn btn--ghost btn--large">ПЕРВЫЙ ЗАЕЗД</a>
+          <a href="https://t.me/onli_apx" target="_blank" rel="noopener" class="btn btn--primary btn--large">
+            Написать в Telegram →
+          </a>
+        </div>
+        <span class="cta__note">@onli_apx</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ФУТЕР -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <span class="brand__name">APEEX<span class="brand__accent">MS</span></span>
+        <span class="footer__copy">© 2026 Автоквесты Орск</span>
+      </div>
+      <nav class="footer__nav">
+        <a href="quests.html">Квесты</a>
+        <a href="about.html">Что такое автоквест</a>
+        <a href="index.html#faq">Вопросы</a>
+        <a href="index.html#contact">Контакты</a>
+      </nav>
+      <a href="https://t.me/onli_apx" target="_blank" rel="noopener" class="footer__link">@onli_apx</a>
+    </div>
+  </footer>
+
+  <button class="to-top" id="toTop" aria-label="Наверх">↑</button>
+
+  <script src="script.js"></script>
+</body>
+</html>

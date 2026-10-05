@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Все автоквесты APEEX MS в Орске. Архив игр и ближайшие события.">
+  <meta name="theme-color" content="#08090d">
+  <!-- Open Graph (для Telegram, ВК, WhatsApp) -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="APEEX MS">
+<meta property="og:title" content="APEEX MS — Автоквесты Орск">
+<meta property="og:description" content="Ночные автоквесты в Орске. Собирай команду и разгадай свой город.">
+<meta property="og:image" content="https://phantomrush16.github.io/apeexms/preview.jpg">
+<meta property="og:url" content="https://phantomrush16.github.io/apeexms/">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="APEEX MS — Автоквесты Орск">
+<meta name="twitter:description" content="Ночные автоквесты в Орске. Собирай команду и разгадай свой город.">
+<meta name="twitter:image" content="https://phantomrush16.github.io/apeexms/preview.jpg">
+  <title>Все квесты — APEEX MS</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="preloader" id="preloader">
+    <span class="preloader__logo">APEEX MS</span>
+  </div>
+
+  <!-- ШАПКА -->
+  <header class="header">
+    <div class="container header__inner">
+      <a href="index.html" class="brand">
+        <span class="brand__name">APEEX<span class="brand__accent">MS</span></span>
+        <span class="brand__sub">АВТОКВЕСТЫ ОРСК</span>
+      </a>
+
+      <div class="header__actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Переключить тему">
+          <span class="theme-toggle__icon">☾</span>
+        </button>
+
+        <a href="https://t.me/onli_apx" target="_blank" rel="noopener" class="btn btn--primary btn--small btn--pulse">
+          Новый квест
+        </a>
+
+        <button class="burger" id="burger" aria-label="Открыть меню" aria-expanded="false">
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- БОКОВОЕ МЕНЮ (копия с главной) -->
+  <aside class="side-menu" id="sideMenu" aria-hidden="true">
+    <div class="side-menu__backdrop" data-close-menu></div>
+    <nav class="side-menu__panel" role="navigation">
+      <div class="side-menu__head">
+        <span class="brand__name">APEEX<span class="brand__accent">MS</span></span>
+        <button class="side-menu__close" data-close-menu aria-label="Закрыть меню">✕</button>
+      </div>
+
+      <ul class="side-menu__list">
+        <li><a href="index.html">Главная</a></li>
+
+        <li class="side-menu__item side-menu__item--has-sub" id="questsItem">
+          <div class="side-menu__row">
+            <a href="quests.html" class="side-menu__link">Квесты</a>
+            <button class="side-menu__arrow" id="questsArrow" aria-label="Показать список квестов" aria-expanded="false">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+          </div>
+          <ul class="side-menu__sub" id="questsSub">
+            <li><a href="quest-1.html">ЖИЗНЬ ПО ВЫЗОВУ</a></li>
+            <li><a href="quest-2.html">ТЁМНАЯ ТРАССА</a></li>
+            <li><a href="quest-3.html">ПЕРВЫЙ ЗАЕЗД</a></li>
+          </ul>
+        </li>
+
+        <li><a href="about.html">Что такое автоквест</a></li>
+        <li><a href="index.html#how">Как это работает</a></li>
+        <li><a href="index.html#faq">Вопросы</a></li>
+        <li><a href="index.html#contact">Контакты</a></li>
+      </ul>
+
+      <div class="side-menu__footer">
+        <a href="https://t.me/onli_apx" target="_blank" rel="noopener" class="btn btn--primary side-menu__cta">
+          Написать в Telegram
+        </a>
+        <span class="side-menu__note">@onli_apx</span>
+      </div>
+    </nav>
+  </aside>
+
+  <!-- ЗАГОЛОВОК СТРАНИЦЫ -->
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow reveal">Все игры</span>
+      <h1 class="page-hero__title reveal reveal--delay-1">
+        КВЕСТЫ<br><span class="gradient-text">APEEX MS</span>
+      </h1>
+      <p class="page-hero__text reveal reveal--delay-2">
+        Полный список наших игр. Ближайшие — сверху. Архивные — ниже.
+      </p>
+    </div>
+  </section>
+
+  <!-- СПИСОК КВЕСТОВ -->
+  <section class="section section--tight">
+    <div class="container">
+      <div class="quests__grid">
+
+        <a href="quest-1.html" class="quest-card reveal">
+          <div class="quest-card__media">
+            <img src="images/quest-1-cover.webp" alt="ЖИЗНЬ ПО ВЫЗОВУ" loading="lazy">
+            <span class="quest-card__tag">Классический</span>
+          </div>
+          <div class="quest-card__body">
+            <h3 class="quest-card__title">ЖИЗНЬ ПО ВЫЗОВУ</h3>
+            <p class="quest-card__text">
+              Сюжетный автоквест для новичков. Антураж, легенда, живые точки.
+            </p>
+            <div class="quest-card__footer">
+              <span class="quest-card__price">1 500 ₽</span>
+              <span class="quest-card__link">Подробнее →</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="quest-2.html" class="quest-card reveal reveal--delay-1">
+          <div class="quest-card__media">
+            <img src="images/quest-2-cover.webp" alt="ТЁМНАЯ ТРАССА" loading="lazy">
+            <span class="quest-card__tag">Ночной</span>
+          </div>
+          <div class="quest-card__body">
+            <h3 class="quest-card__title">ТЁМНАЯ ТРАССА</h3>
+            <p class="quest-card__text">
+              Ночной заезд по городу. Поиск кодов, агентские задания, сложные шифры.
+            </p>
+            <div class="quest-card__footer">
+              <span class="quest-card__price">1 800 ₽</span>
+              <span class="quest-card__link">Подробнее →</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="quest-3.html" class="quest-card reveal reveal--delay-2">
+          <div class="quest-card__media">
+            <img src="images/quest-3-cover.webp" alt="ПЕРВЫЙ ЗАЕЗД" loading="lazy">
+            <span class="quest-card__tag">Для новичков</span>
+          </div>
+          <div class="quest-card__body">
+            <h3 class="quest-card__title">ПЕРВЫЙ ЗАЕЗД</h3>
+            <p class="quest-card__text">
+              Лёгкий формат. Понятные задания, дружеская атмосфера.
+            </p>
+            <div class="quest-card__footer">
+              <span class="quest-card__price">1 200 ₽</span>
+              <span class="quest-card__link">Подробнее →</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- ЗАГЛУШКИ ДЛЯ АРХИВА (когда появятся) -->
+        <div class="quest-card quest-card--coming reveal reveal--delay-3">
+          <div class="quest-card__media quest-card__media--empty">
+            <span class="quest-card__tag quest-card__tag--dim">Скоро</span>
+          </div>
+          <div class="quest-card__body">
+            <h3 class="quest-card__title">Следующий квест</h3>
+            <p class="quest-card__text">
+              Анонс появится в Telegram. Подпишись, чтобы не пропустить.
+            </p>
+            <div class="quest-card__footer">
+              <span class="quest-card__price">—</span>
+              <a href="https://t.me/onli_apx" target="_blank" rel="noopener" class="quest-card__link">Следить →</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section cta" id="contact">
+    <div class="container">
+      <div class="cta__inner reveal">
+        <div class="cta__glow"></div>
+        <span class="eyebrow">Готов играть?</span>
+        <h2 class="cta__title">
+          Собирай команду —<br>
+          мы <span class="gradient-text">ждём</span>
+        </h2>
+        <p class="cta__text">
+          Пиши в Telegram. Ответим быстро, добавим в ближайшую игру.
+        </p>
+        <a href="https://t.me/onli_apx" target="_blank" rel="noopener" class="btn btn--primary btn--large">
+          Написать в Telegram →
+        </a>
+        <span class="cta__note">@onli_apx</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ФУТЕР -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <span class="brand__name">APEEX<span class="brand__accent">MS</span></span>
+        <span class="footer__copy">© 2026 Автоквесты Орск</span>
+      </div>
+      <nav class="footer__nav">
+        <a href="quests.html">Квесты</a>
+        <a href="about.html">Что такое автоквест</a>
+        <a href="index.html#faq">Вопросы</a>
+        <a href="index.html#contact">Контакты</a>
+      </nav>
+      <a href="https://t.me/onli_apx" target="_blank" rel="noopener" class="footer__link">@onli_apx</a>
+    </div>
+  </footer>
+
+  <button class="to-top" id="toTop" aria-label="Наверх">↑</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
