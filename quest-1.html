@@ -3,34 +3,71 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="ЖИЗНЬ ПО ВЫЗОВУ — классический автоквест для новичков в Орске. 13.06.2026. Записывайся в APEEX MS.">
+  <meta name="description" content="ВЕДЬМИН ЧАС — хеллоуинский автоквест по ночному Орску. 31.10.2026. Собери 5 печатей, пока Ведьма не вернулась.">
   <meta name="theme-color" content="#08090d">
-  <!-- Open Graph (для Telegram, ВК, WhatsApp) -->
-<meta property="og:type" content="article">
-<meta property="og:site_name" content="APEEX MS">
-<meta property="og:title" content="ЖИЗНЬ ПО ВЫЗОВУ — квест 13.06.2026">
-<meta property="og:description" content="Классический автоквест для новичков в Орске. 5 часов ночного драйва.">
-<meta property="og:image" content="https://phantomrush16.github.io/apeexms/preview.jpg">
-<meta property="og:url" content="https://phantomrush16.github.io/apeexms/quest-1.html">
-<!-- Twitter -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="APEEX MS — Автоквесты Орск">
-<meta name="twitter:description" content="Ночные автоквесты в Орске. Собирай команду и разгадай свой город.">
-<meta name="twitter:image" content="preview.jpg">
-  <title>ЖИЗНЬ ПО ВЫЗОВУ — APEEX MS</title>
 
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="APEEX MS">
+  <meta property="og:title" content="ВЕДЬМИН ЧАС — квест 31.10.2026">
+  <meta property="og:description" content="Хеллоуинский автоквест по ночному Орску. Собери 5 печатей, пока Ведьма не вернулась.">
+  <meta property="og:image" content="https://phantomrush16.github.io/apeexms/preview.jpg">
+  <meta property="og:url" content="https://phantomrush16.github.io/apeexms/quest-1.html">
+
+  <title>ВЕДЬМИН ЧАС — APEEX MS</title>
+
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
- <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="theme-halloween">
+    <!-- ПАУТИНА ПО УГЛАМ -->
+  <div class="spiderwebs" aria-hidden="true">
+    <svg class="web web--tl" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <g stroke="rgba(255,255,255,0.25)" stroke-width="1" fill="none">
+        <path d="M0 0 L200 200 M0 0 L150 180 M0 0 L100 170 M0 0 L50 150 M0 0 L0 100 M0 0 L50 50 M0 0 L100 20 M0 0 L150 0"/>
+        <path d="M30 0 Q20 10 0 30 M60 0 Q50 30 0 60 M90 0 Q70 60 0 90 M120 0 Q90 90 0 120 M150 0 Q100 100 0 150 M180 0 Q110 110 0 180"/>
+      </g>
+    </svg>
 
+    <svg class="web web--tr" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <g stroke="rgba(255,255,255,0.25)" stroke-width="1" fill="none">
+        <path d="M200 0 L0 200 M200 0 L50 180 M200 0 L100 170 M200 0 L150 150 M200 0 L200 100 M200 0 L150 50 M200 0 L100 20 M200 0 L50 0"/>
+        <path d="M170 0 Q180 10 200 30 M140 0 Q150 30 200 60 M110 0 Q130 60 200 90 M80 0 Q110 90 200 120 M50 0 Q100 100 200 150 M20 0 Q90 110 200 180"/>
+      </g>
+    </svg>
+  </div>
+  <!-- ХЕЛЛОУИНСКИЙ ДЕКОР -->
+  <div class="halloween-decor" aria-hidden="true">
+    <!-- Летучие мыши -->
+    <div class="bat bat--1"><svg viewBox="0 0 64 32" fill="currentColor"><path d="M32 16c-4-2-6-6-6-10 0 3-2 6-5 7 0-3-2-6-5-7-1 4-4 7-8 8 4 1 6 3 8 6 3-1 5-3 6-5 2 3 6 5 10 5s8-2 10-5c1 2 3 4 6 5 2-3 4-5 8-6-4-1-7-4-8-8-3 1-5 4-5 7-3-1-5-4-5-7 0 4-2 8-6 10z"/></svg></div>
+    <div class="bat bat--2"><svg viewBox="0 0 64 32" fill="currentColor"><path d="M32 16c-4-2-6-6-6-10 0 3-2 6-5 7 0-3-2-6-5-7-1 4-4 7-8 8 4 1 6 3 8 6 3-1 5-3 6-5 2 3 6 5 10 5s8-2 10-5c1 2 3 4 6 5 2-3 4-5 8-6-4-1-7-4-8-8-3 1-5 4-5 7-3-1-5-4-5-7 0 4-2 8-6 10z"/></svg></div>
+    <div class="bat bat--3"><svg viewBox="0 0 64 32" fill="currentColor"><path d="M32 16c-4-2-6-6-6-10 0 3-2 6-5 7 0-3-2-6-5-7-1 4-4 7-8 8 4 1 6 3 8 6 3-1 5-3 6-5 2 3 6 5 10 5s8-2 10-5c1 2 3 4 6 5 2-3 4-5 8-6-4-1-7-4-8-8-3 1-5 4-5 7-3-1-5-4-5-7 0 4-2 8-6 10z"/></svg></div>
+    <div class="bat bat--4"><svg viewBox="0 0 64 32" fill="currentColor"><path d="M32 16c-4-2-6-6-6-10 0 3-2 6-5 7 0-3-2-6-5-7-1 4-4 7-8 8 4 1 6 3 8 6 3-1 5-3 6-5 2 3 6 5 10 5s8-2 10-5c1 2 3 4 6 5 2-3 4-5 8-6-4-1-7-4-8-8-3 1-5 4-5 7-3-1-5-4-5-7 0 4-2 8-6 10z"/></svg></div>
+    <div class="bat bat--5"><svg viewBox="0 0 64 32" fill="currentColor"><path d="M32 16c-4-2-6-6-6-10 0 3-2 6-5 7 0-3-2-6-5-7-1 4-4 7-8 8 4 1 6 3 8 6 3-1 5-3 6-5 2 3 6 5 10 5s8-2 10-5c1 2 3 4 6 5 2-3 4-5 8-6-4-1-7-4-8-8-3 1-5 4-5 7-3-1-5-4-5-7 0 4-2 8-6 10z"/></svg></div>
+
+    <!-- Светлячки -->
+    <span class="firefly firefly--1"></span>
+    <span class="firefly firefly--2"></span>
+    <span class="firefly firefly--3"></span>
+    <span class="firefly firefly--4"></span>
+    <span class="firefly firefly--5"></span>
+    <span class="firefly firefly--6"></span>
+    <span class="firefly firefly--7"></span>
+    <span class="firefly firefly--8"></span>
+    <span class="firefly firefly--9"></span>
+    <span class="firefly firefly--10"></span>
+    <span class="firefly firefly--11"></span>
+    <span class="firefly firefly--12"></span>
+
+    <!-- Туман снизу -->
+    <div class="fog"></div>
+  </div>
   <div class="preloader" id="preloader">
     <span class="preloader__logo">APEEX MS</span>
   </div>
 
-  <!-- ШАПКА -->
   <header class="header">
     <div class="container header__inner">
       <a href="index.html" class="brand">
@@ -55,7 +92,6 @@
     </div>
   </header>
 
-  <!-- БОКОВОЕ МЕНЮ -->
   <aside class="side-menu" id="sideMenu" aria-hidden="true">
     <div class="side-menu__backdrop" data-close-menu></div>
     <nav class="side-menu__panel" role="navigation">
@@ -75,9 +111,7 @@
             </button>
           </div>
           <ul class="side-menu__sub" id="questsSub">
-            <li><a href="quest-1.html">ЖИЗНЬ ПО ВЫЗОВУ</a></li>
-            <li><a href="quest-2.html">ТЁМНАЯ ТРАССА</a></li>
-            <li><a href="quest-3.html">ПЕРВЫЙ ЗАЕЗД</a></li>
+            <li><a href="quest-1.html">ВЕДЬМИН ЧАС</a></li>
           </ul>
         </li>
 
@@ -96,48 +130,48 @@
     </nav>
   </aside>
 
-  <!-- HERO КВЕСТА -->
   <section class="quest-hero">
     <div class="container">
       <a href="quests.html" class="back-link reveal">← Все квесты</a>
 
       <div class="quest-hero__grid">
         <div class="quest-hero__content">
-          <span class="quest-hero__tag reveal">Классический • Для новичков</span>
+          <span class="quest-hero__tag reveal">Хеллоуин • Ночной</span>
           <h1 class="quest-hero__title reveal reveal--delay-1">
-            ЖИЗНЬ<br>ПО <span class="gradient-text">ВЫЗОВУ</span>
+            ВЕДЬМИН<br><span class="gradient-text">ЧАС</span>
           </h1>
           <p class="quest-hero__subtitle reveal reveal--delay-2">
-            Сюжетный автоквест по ночному Орску. Антураж, легенда,
-            живые точки и пять часов драйва до рассвета.
+            В ночь на 1 ноября граница между мирами становится тонкой.
+            В Орске пробуждается Старая Ведьма. Собери 5 печатей —
+            или город проснётся в её власти.
           </p>
 
           <div class="quest-hero__meta reveal reveal--delay-3">
             <div class="meta-item">
               <span class="meta-item__label">Дата</span>
-              <span class="meta-item__value">13.06.2026</span>
+              <span class="meta-item__value">31.10.2026</span>
             </div>
             <div class="meta-item">
               <span class="meta-item__label">Сбор</span>
-              <span class="meta-item__value">22:30</span>
+              <span class="meta-item__value">22:00</span>
             </div>
             <div class="meta-item">
               <span class="meta-item__label">Старт</span>
-              <span class="meta-item__value">00:00</span>
+              <span class="meta-item__value">22:30</span>
             </div>
             <div class="meta-item">
               <span class="meta-item__label">Экипаж</span>
-              <span class="meta-item__value">2–6 чел</span>
+              <span class="meta-item__value">1–5 чел</span>
             </div>
             <div class="meta-item">
               <span class="meta-item__label">Цена</span>
-              <span class="meta-item__value accent">1 500 ₽</span>
+              <span class="meta-item__value accent">1 200 ₽</span>
             </div>
           </div>
 
           <div class="quest-hero__actions reveal reveal--delay-4">
             <a
-              href="https://t.me/onli_apx?text=Хочу записаться на квест «ЖИЗНЬ ПО ВЫЗОВУ» (13.06.2026)"
+              href="https://t.me/onli_apx?text=Хочу записаться на квест «ВЕДЬМИН ЧАС» (31.10.2026)"
               target="_blank"
               rel="noopener"
               class="btn btn--primary btn--large"
@@ -152,7 +186,7 @@
           <div class="quest-hero__image">
             <img
               src="images/quest-1-hero.webp"
-              alt="ЖИЗНЬ ПО ВЫЗОВУ"
+              alt="ВЕДЬМИН ЧАС"
               loading="eager">
           </div>
           <div class="quest-hero__badge">
@@ -164,7 +198,6 @@
     </div>
   </section>
 
-  <!-- ЧТО ВАС ЖДЁТ -->
   <section class="section" id="about-quest">
     <div class="container">
       <div class="section-head reveal">
@@ -174,23 +207,23 @@
 
       <div class="quest-text reveal">
         <p>
-          Классический автоквест для новичков. Это сюжетная, антуражная
-          и насыщенная игра, в которую стоит сыграть хотя бы раз.
+          В ночь на 1 ноября граница между мирами становится тонкой.
+          В Орске пробуждается Старая Ведьма. Когда-то её сожгли на окраине
+          города, и с тех пор её дух ищет пять печатей, чтобы вернуться.
         </p>
         <p>
-          Полный спектр эмоций: от первой разгадки до финального зачёта.
-          Игра проходит на движке — задания приходят онлайн, ответы вводите там же.
+          Вы — охотники. Найдите все пять печатей раньше, чем она
+          соберёт их сама. Если не успеете — город проснётся в её власти.
         </p>
         <p>
-          Если вы играете впервые — нет ничего лучше, чем начать именно
-          с этого квеста. Правила простые, атмосфера дружеская,
-          а задания — интересные и без «жёсткого» соперничества.
+          Вас ждут ночные локации, старые здания, тёмные парки и живые
+          актёры. Каждая точка — своя загадка. Каждая печать — шаг
+          к финалу, где вас будет ждать сама Ведьма.
         </p>
       </div>
     </div>
   </section>
 
-  <!-- ТИПЫ ЗАДАНИЙ -->
   <section class="section section--tight">
     <div class="container">
       <div class="section-head reveal">
@@ -199,19 +232,16 @@
       </div>
 
       <ul class="tasks-list reveal">
-        <li>Антуражная легенда</li>
-        <li>Траектория — задание на ориентирование</li>
-        <li>Поиск кодов в неожиданных местах</li>
-        <li>Агентское задание — вычислить и выполнить</li>
-        <li>Живой чек — точки с организаторами</li>
+        <li>Поиск символов и кодов на старых локациях</li>
+        <li>Задания в тёмных заброшенных местах</li>
+        <li>Агентские роли с живыми актёрами</li>
+        <li>Фото-задания в хоррор-стиле</li>
         <li>Логические загадки и шифры</li>
-        <li>Фото-задания на креатив</li>
-        <li>Олимпийка — ассоциативно-логическая задача</li>
+        <li>Живая точка с Ведьмой на финише</li>
       </ul>
     </div>
   </section>
 
-  <!-- ЧТО ВЗЯТЬ -->
   <section class="section section--tight">
     <div class="container">
       <div class="section-head reveal">
@@ -220,30 +250,29 @@
       </div>
 
       <ul class="check-list reveal">
-        <li>Автомобиль и команду (2–6 человек)</li>
+        <li>Автомобиль и команду (1–5 человек)</li>
+        <li>Фонарик — обязательно, будет темно</li>
+        <li>Телефон с камерой</li>
+        <li>Тёплую одежду по погоде</li>
         <li>Интернет на телефоне</li>
-        <li>Яндекс.Карты или навигатор</li>
-        <li>Телефон с хорошей камерой</li>
-        <li>Фонарики — по одному на поисковика</li>
-        <li>Одежду и обувь по погоде</li>
+        <li>Хорошее настроение и немного смелости</li>
       </ul>
     </div>
   </section>
 
-  <!-- СТОИМОСТЬ -->
   <section class="section section--tight">
     <div class="container">
       <div class="price-block reveal">
         <div class="price-block__content">
           <span class="eyebrow">Стоимость</span>
-          <h2 class="price-block__title">1 500 ₽ <span>с человека</span></h2>
+          <h2 class="price-block__title">1 200 ₽ <span>с человека</span></h2>
           <p class="price-block__text">
-            Одна машина = одна команда. Экипаж от 2 до 6 человек.
+            Одна машина = одна команда. Экипаж от 1 до 5 человек.
             Оплата — до старта игры.
           </p>
         </div>
         <a
-          href="https://t.me/onli_apx?text=Хочу записаться на квест «ЖИЗНЬ ПО ВЫЗОВУ» (13.06.2026)"
+          href="https://t.me/onli_apx?text=Хочу записаться на квест «ВЕДЬМИН ЧАС» (31.10.2026)"
           target="_blank"
           rel="noopener"
           class="btn btn--primary btn--large"
@@ -254,20 +283,19 @@
     </div>
   </section>
 
-  <!-- CTA ЗАПИСИ -->
   <section class="section cta quest-cta">
     <div class="container">
       <div class="cta__inner reveal">
         <div class="cta__glow"></div>
         <span class="eyebrow">Готовы играть?</span>
         <h2 class="cta__title">
-          Записывайся<br>на <span class="gradient-text">ЖИЗНЬ ПО ВЫЗОВУ</span>
+          Записывайся<br>на <span class="gradient-text">ВЕДЬМИН ЧАС</span>
         </h2>
         <p class="cta__text">
           Откроется Telegram — просто нажми «Отправить». Мы ответим и добавим тебя в игру.
         </p>
         <a
-          href="https://t.me/onli_apx?text=Хочу записаться на квест «ЖИЗНЬ ПО ВЫЗОВУ» (13.06.2026)"
+          href="https://t.me/onli_apx?text=Хочу записаться на квест «ВЕДЬМИН ЧАС» (31.10.2026)"
           target="_blank"
           rel="noopener"
           class="btn btn--primary btn--large"
@@ -279,49 +307,6 @@
     </div>
   </section>
 
-  <!-- ДРУГИЕ КВЕСТЫ -->
-  <section class="section section--tight">
-    <div class="container">
-      <div class="section-head reveal">
-        <span class="eyebrow">Ещё</span>
-        <h2 class="section-title">Другие квесты</h2>
-      </div>
-
-      <div class="quests__grid quests__grid--two">
-        <a href="quest-2.html" class="quest-card reveal">
-          <div class="quest-card__media">
-            <img src="images/quest-2-cover.webp" alt="ТЁМНАЯ ТРАССА" loading="lazy">
-            <span class="quest-card__tag">Ночной</span>
-          </div>
-          <div class="quest-card__body">
-            <h3 class="quest-card__title">ТЁМНАЯ ТРАССА</h3>
-            <p class="quest-card__text">Ночной заезд по городу с шифрами и агентскими заданиями.</p>
-            <div class="quest-card__footer">
-              <span class="quest-card__price">1 800 ₽</span>
-              <span class="quest-card__link">Подробнее →</span>
-            </div>
-          </div>
-        </a>
-
-        <a href="quest-3.html" class="quest-card reveal reveal--delay-1">
-          <div class="quest-card__media">
-            <img src="images/quest-3-cover.webp" alt="ПЕРВЫЙ ЗАЕЗД" loading="lazy">
-            <span class="quest-card__tag">Для новичков</span>
-          </div>
-          <div class="quest-card__body">
-            <h3 class="quest-card__title">ПЕРВЫЙ ЗАЕЗД</h3>
-            <p class="quest-card__text">Лёгкий формат — попробовать и понять, что такое автоквест.</p>
-            <div class="quest-card__footer">
-              <span class="quest-card__price">1 200 ₽</span>
-              <span class="quest-card__link">Подробнее →</span>
-            </div>
-          </div>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ФУТЕР -->
   <footer class="footer">
     <div class="container footer__inner">
       <div class="footer__brand">
