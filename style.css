@@ -2134,3 +2134,407 @@ font-size: var(--fs-small);
     padding: 44px 20px;
   }
 }
+
+/* ============================================
+   ХЕЛЛОУИНСКАЯ АТМОСФЕРА
+   Активируется классом .theme-halloween на <body>
+   ============================================ */
+
+/* ---------- Переменные: хеллоуинская палитра ---------- */
+body.theme-halloween {
+  --accent: #ff6b1a;         /* тыквенный оранжевый */
+  --accent-hover: #ff8534;
+  --accent-dim: rgba(255, 107, 26, 0.15);
+  --accent-glow: rgba(255, 107, 26, 0.5);
+
+  --secondary: #7c2fd6;      /* мистический фиолетовый */
+  --secondary-hover: #9d4eef;
+
+  --border-accent: rgba(255, 107, 26, 0.4);
+}
+
+/* ---------- Фон с атмосферой ---------- */
+body.theme-halloween::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.35;
+  background-image:
+    radial-gradient(circle at 15% 20%, rgba(255, 107, 26, 0.15), transparent 40%),
+    radial-gradient(circle at 85% 70%, rgba(124, 47, 214, 0.12), transparent 45%),
+    radial-gradient(circle at 50% 100%, rgba(255, 107, 26, 0.08), transparent 50%);
+  mix-blend-mode: screen;
+}
+
+/* ---------- Тонкий туман поверх фона ---------- */
+body.theme-halloween::before {
+  opacity: 0.05;
+  background-image:
+    radial-gradient(circle at 20% 30%, rgba(255,255,255,0.4), transparent 25%),
+    radial-gradient(circle at 70% 60%, rgba(255,255,255,0.3), transparent 25%),
+    radial-gradient(circle at 40% 85%, rgba(255,255,255,0.2), transparent 30%);
+  mix-blend-mode: screen;
+}
+
+/* ---------- Hero с тыквенным свечением ---------- */
+body.theme-halloween .hero::before {
+  background: radial-gradient(circle at 50% 40%, rgba(255, 107, 26, 0.18), transparent 55%);
+}
+
+body.theme-halloween .hero__glow {
+  background: radial-gradient(circle, rgba(255, 107, 26, 0.4), transparent 60%);
+}
+
+/* ---------- Кнопки — оранжевые, теплее ---------- */
+body.theme-halloween .btn--primary {
+  background: linear-gradient(135deg, #ff6b1a, #ff8534);
+  box-shadow: 0 0 0 0 rgba(255, 107, 26, 0.5);
+}
+
+body.theme-halloween .btn--primary:hover {
+  box-shadow: 0 12px 40px rgba(255, 107, 26, 0.5);
+}
+
+body.theme-halloween .btn--pulse::after {
+  background: #ff6b1a;
+}
+
+/* ---------- Карточки с тыквенным свечением при hover ---------- */
+body.theme-halloween .quest-card:hover {
+  box-shadow: 0 24px 60px rgba(255, 107, 26, 0.18);
+}
+
+body.theme-halloween .how-step:hover {
+  border-color: rgba(255, 107, 26, 0.5);
+}
+
+body.theme-halloween .how-step::before {
+  background: linear-gradient(90deg, #ff6b1a, transparent);
+}
+
+/* ---------- Бейдж квеста — как светящаяся тыква ---------- */
+body.theme-halloween .quest-card__tag {
+  color: #ff8534;
+  border-color: rgba(255, 107, 26, 0.5);
+}
+
+/* ---------- «Скоро» карточка — чуть тусклее ---------- */
+body.theme-halloween .quest-card--coming {
+  opacity: 0.5;
+}
+
+/* ---------- CTA с тёплым свечением ---------- */
+body.theme-halloween .cta__glow {
+  background: radial-gradient(circle, rgba(255, 107, 26, 0.5), transparent 55%);
+}
+
+/* ---------- Градиентный текст — тыквенный ---------- */
+body.theme-halloween .gradient-text {
+  background: linear-gradient(120deg, #ff6b1a, #7c2fd6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ============================================
+   ХЕЛЛОУИНСКИЙ ДЕКОР: мыши, светлячки, туман
+   Работает только при .theme-halloween
+   ============================================ */
+
+.halloween-decor {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 5;
+  overflow: hidden;
+  display: none;
+}
+
+body.theme-halloween .halloween-decor {
+  display: block;
+}
+
+/* ---------- Летучие мыши ---------- */
+.bat {
+  position: absolute;
+  width: 48px;
+  height: 24px;
+  color: #1a0e2e;
+  opacity: 0;
+  filter: drop-shadow(0 0 4px rgba(255, 107, 26, 0.25));
+  animation: batFly 22s linear infinite;
+}
+
+.bat svg {
+  width: 100%;
+  height: 100%;
+  animation: batWings 0.5s ease-in-out infinite;
+}
+
+.bat--1 { top: 18%; left: -10%; animation-duration: 26s; animation-delay: 0s; }
+.bat--2 { top: 32%; left: -10%; animation-duration: 32s; animation-delay: -6s; transform: scale(0.7); }
+.bat--3 { top: 12%; left: -10%; animation-duration: 38s; animation-delay: -12s; transform: scale(0.55); }
+.bat--4 { top: 55%; left: -10%; animation-duration: 30s; animation-delay: -18s; transform: scale(0.85); }
+.bat--5 { top: 70%; left: -10%; animation-duration: 42s; animation-delay: -24s; transform: scale(0.6); }
+
+@keyframes batFly {
+  0%   { transform: translateX(0) translateY(0); opacity: 0; }
+  5%   { opacity: 0.7; }
+  25%  { transform: translateX(30vw) translateY(-40px); }
+  50%  { transform: translateX(60vw) translateY(20px); }
+  75%  { transform: translateX(90vw) translateY(-30px); opacity: 0.6; }
+  95%  { opacity: 0.2; }
+  100% { transform: translateX(120vw) translateY(10px); opacity: 0; }
+}
+
+@keyframes batWings {
+  0%, 100% { transform: scaleY(1); }
+  50%      { transform: scaleY(0.5); }
+}
+
+/* ---------- Светлячки ---------- */
+.firefly {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #ff9a3c;
+  box-shadow:
+    0 0 8px 2px rgba(255, 154, 60, 0.9),
+    0 0 20px 6px rgba(255, 107, 26, 0.5);
+  opacity: 0;
+  animation: fireflyFloat 14s ease-in-out infinite,
+             fireflyGlow 3s ease-in-out infinite;
+}
+
+.firefly--1  { top: 20%; left: 12%; animation-delay: 0s, 0s; }
+.firefly--2  { top: 35%; left: 78%; animation-delay: -2s, -0.5s; }
+.firefly--3  { top: 55%; left: 25%; animation-delay: -4s, -1s; }
+.firefly--4  { top: 70%; left: 60%; animation-delay: -6s, -1.5s; }
+.firefly--5  { top: 25%; left: 45%; animation-delay: -8s, -2s; }
+.firefly--6  { top: 80%; left: 30%; animation-delay: -10s, -2.5s; }
+.firefly--7  { top: 15%; left: 88%; animation-delay: -1s, -0.3s; }
+.firefly--8  { top: 60%; left: 8%;  animation-delay: -3s, -0.8s; }
+.firefly--9  { top: 45%; left: 92%; animation-delay: -5s, -1.2s; }
+.firefly--10 { top: 85%; left: 72%; animation-delay: -7s, -1.7s; }
+.firefly--11 { top: 28%; left: 62%; animation-delay: -9s, -2.2s; }
+.firefly--12 { top: 68%; left: 40%; animation-delay: -11s, -2.7s; }
+
+@keyframes fireflyFloat {
+  0%, 100% { transform: translate(0, 0); }
+  25%      { transform: translate(30px, -25px); }
+  50%      { transform: translate(-15px, 20px); }
+  75%      { transform: translate(-25px, -15px); }
+}
+
+@keyframes fireflyGlow {
+  0%, 100% { opacity: 0.1; }
+  50%      { opacity: 0.9; }
+}
+
+/* ---------- Туман снизу ---------- */
+.fog {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 200px;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at 20% 100%, rgba(124, 47, 214, 0.35), transparent 50%),
+    radial-gradient(ellipse at 50% 100%, rgba(255, 107, 26, 0.25), transparent 55%),
+    radial-gradient(ellipse at 80% 100%, rgba(124, 47, 214, 0.3), transparent 50%);
+  animation: fogDrift 20s ease-in-out infinite;
+  filter: blur(20px);
+}
+
+@keyframes fogDrift {
+  0%, 100% { transform: translateX(0) scaleY(1); opacity: 0.5; }
+  50%      { transform: translateX(-30px) scaleY(1.1); opacity: 0.7; }
+}
+
+/* ---------- На мобильных поменьше ---------- */
+@media (max-width: 700px) {
+  .bat { width: 32px; height: 16px; }
+
+  .firefly {
+    width: 4px;
+    height: 4px;
+    box-shadow:
+      0 0 6px 2px rgba(255, 154, 60, 0.8),
+      0 0 14px 4px rgba(255, 107, 26, 0.4);
+  }
+
+  .fog { height: 140px; filter: blur(15px); }
+}
+
+/* ---------- Уважение к настройкам пользователя ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .bat,
+  .bat svg,
+  .firefly,
+  .fog {
+    animation: none !important;
+  }
+}
+/* ============================================
+   ХЕЛЛОУИН: ТЫКВА, ПАУТИНА, СВЕЧИ
+   ============================================ */
+
+/* ---------- Тыква на Hero ---------- */
+.pumpkin {
+  position: absolute;
+  top: -60px;
+  right: -40px;
+  width: 180px;
+  height: 160px;
+  z-index: 3;
+  filter: drop-shadow(0 0 30px rgba(255, 107, 26, 0.6));
+  animation: pumpkinBob 4s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.pumpkin svg { width: 100%; height: 100%; }
+
+@keyframes pumpkinBob {
+  0%, 100% { transform: translateY(0) rotate(-4deg); }
+  50%      { transform: translateY(-12px) rotate(2deg); }
+}
+
+@media (max-width: 960px) {
+  .pumpkin {
+    width: 120px;
+    height: 110px;
+    top: -30px;
+    right: -20px;
+  }
+}
+
+@media (max-width: 560px) {
+  .pumpkin {
+    width: 90px;
+    height: 80px;
+    top: -20px;
+    right: -10px;
+  }
+}
+
+/* ---------- Паутина ---------- */
+.spiderwebs {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 4;
+  display: none;
+}
+
+body.theme-halloween .spiderwebs {
+  display: block;
+}
+
+.web {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  opacity: 0;
+  animation: webAppear 3s ease-out 0.5s forwards;
+}
+
+.web--tl { top: -10px; left: -10px; transform-origin: top left; }
+.web--tr { top: -10px; right: -10px; transform-origin: top right; transform: scaleX(-1); }
+
+@keyframes webAppear {
+  from { opacity: 0; transform: scale(0.7); }
+  to   { opacity: 0.55; transform: scale(1); }
+}
+
+.web--tr { animation: webAppear 3s ease-out 0.5s forwards, none; }
+
+@media (max-width: 700px) {
+  .web { width: 130px; height: 130px; }
+}
+
+/* ---------- Свечи ---------- */
+.candles {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+.candle {
+  position: absolute;
+  bottom: 30px;
+  width: 8px;
+  height: 40px;
+  background: linear-gradient(180deg, #f5e6c8 0%, #d4c5a0 100%);
+  border-radius: 2px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.candle::before {
+  content: '';
+  position: absolute;
+  top: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 6px;
+  background: #3a2a10;
+  border-radius: 1px;
+}
+
+.candle__flame {
+  position: absolute;
+  top: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 10px;
+  height: 16px;
+  background: radial-gradient(circle at 50% 60%, #fff 0%, #ffd166 30%, #ff6b1a 70%, transparent 100%);
+  border-radius: 50% 50% 40% 40%;
+  filter: blur(0.5px);
+  animation: flameFlicker 0.4s ease-in-out infinite alternate;
+}
+
+.candle__flame::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(255, 107, 26, 0.6), transparent 70%);
+  filter: blur(10px);
+  transform: scale(2.5);
+  border-radius: 50%;
+}
+
+@keyframes flameFlicker {
+  0%   { transform: translateX(-50%) scale(1) rotate(-2deg); }
+  100% { transform: translateX(-50%) scale(1.1) rotate(2deg); }
+}
+
+.candle--1 { left: 8%; bottom: 20px; }
+.candle--2 { left: 15%; bottom: 40px; height: 55px; }
+.candle--3 { left: 22%; bottom: 15px; height: 35px; }
+
+@media (max-width: 700px) {
+  .candle--1 { left: 4%; }
+  .candle--2 { left: 10%; }
+  .candle--3 { left: 16%; }
+}
+
+@media (max-width: 480px) {
+  .candles { display: none; }
+}
+
+/* ---------- Отключаем при reduce-motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .pumpkin,
+  .candle__flame,
+  .web {
+    animation: none !important;
+  }
+}
