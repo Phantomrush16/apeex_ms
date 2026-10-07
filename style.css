@@ -2538,3 +2538,80 @@ body.theme-halloween .spiderwebs {
     animation: none !important;
   }
 }
+
+
+/* ============================================
+   ФИКС ПРОИЗВОДИТЕЛЬНОСТИ: облегчаем декор на мобильных
+   ============================================ */
+
+@media (max-width: 960px) {
+
+  /* Отключаем тяжёлые анимации у мышей */
+  .halloween-decor .bat {
+    animation-duration: 60s !important;  /* медленнее — меньше кадров */
+    filter: none !important;
+    opacity: 0.5 !important;
+  }
+
+  .halloween-decor .bat svg {
+    animation: none !important;  /* убираем махи крыльев */
+  }
+
+  /* Отключаем свечение у светлячков */
+  .halloween-decor .firefly {
+    box-shadow: 0 0 6px rgba(255, 154, 60, 0.6) !important;
+    animation-duration: 20s, 4s !important;
+  }
+
+  /* Уменьшаем blur у тумана */
+  .fog {
+    filter: blur(10px) !important;
+    animation-duration: 40s !important;
+  }
+
+  /* Отключаем тяжёлый drop-shadow у тыквы */
+  .pumpkin {
+    filter: none !important;
+    animation-duration: 8s !important;
+  }
+
+  /* Убираем свечение у свечей */
+  .candle__flame {
+    filter: none !important;
+  }
+
+  .candle__flame::after {
+    display: none !important;
+  }
+
+  /* Отключаем все свечи на маленьких экранах */
+  .candles {
+    display: none !important;
+  }
+}
+
+/* Оптимизация прокрутки */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-y: none;
+}
+
+/* Оптимизация отрисовки для декора */
+.halloween-decor,
+.spiderwebs {
+  will-change: auto;
+  contain: strict;
+}
+
+.bat,
+.firefly,
+.fog,
+.pumpkin {
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+}
