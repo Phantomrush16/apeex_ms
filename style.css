@@ -2590,28 +2590,3 @@ body.theme-halloween .spiderwebs {
   }
 }
 
-/* Оптимизация прокрутки */
-* {
-  -webkit-tap-highlight-color: transparent;
-}
-
-body {
-  -webkit-overflow-scrolling: touch;
-  overscroll-behavior-y: none;
-}
-
-/* Оптимизация отрисовки для декора */
-.halloween-decor,
-.spiderwebs {
-  will-change: auto;
-  contain: strict;
-}
-
-.bat,
-.firefly,
-.fog,
-.pumpkin {
-  will-change: transform;
-  transform: translate3d(0, 0, 0);
-  backface-visibility: hidden;
-}
